@@ -7,7 +7,7 @@ public class Terre {
 	
 	private Terre() {}
 	
-	public static synchronized Terre getInstance()
+	public static Terre getInstance()
 	{
 	if (obj==null)
 	obj = new Terre();
