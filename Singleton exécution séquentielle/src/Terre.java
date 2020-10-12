@@ -6,7 +6,7 @@ public class Terre {
 	private long population;
 	private Terre() {}
 	
-    public static Terre getInstance()
+    public static synchronized Terre getInstance()
 	{
 	if (obj==null)
 	obj = new Terre();
