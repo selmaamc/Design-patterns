@@ -1,13 +1,12 @@
 package composite;
-
 import java.util.ArrayList;
 
 public class Composite {
-	abstract class Donnée{
+	abstract class DonnÃ©e{
 		int taille;
 		abstract int taille();
 	}
-	class Fichier extends Donnée{
+	class Fichier extends DonnÃ©e{
 		Fichier(int i){
 			taille = i;
 		}
@@ -15,9 +14,9 @@ public class Composite {
 			return taille;
 		}
 	}
-	class Répertoire extends Donnée{
-		ArrayList<Donnée> d = new ArrayList<>();
-		void add(Donnée f) {
+	class RÃ©pertoire extends DonnÃ©e{
+		ArrayList<DonnÃ©e> d = new ArrayList<>();
+		void add(DonnÃ©e f) {
 			this.d.add(f);
 		}
 		int taille() {
@@ -29,15 +28,15 @@ public class Composite {
 		}
 }
 
-Répertoire r1, r2, r3, r4;
+RÃ©pertoire r1, r2, r3, r4;
 Fichier f1, f2, f3, f4,f5;
 void createPattern() {
-	r1 = new Répertoire();
+	r1 = new RÃ©pertoire();
 	f1 = new Fichier(2);
 	r1.add(f1);
 	
 
-	r2 = new Répertoire();
+	r2 = new RÃ©pertoire();
 	f2 = new Fichier(8);
 	f3 = new Fichier(5);
 	r2.add(f3);
@@ -45,11 +44,11 @@ void createPattern() {
 	
 	r1.add(r2);
 	
-	r3 = new Répertoire();
+	r3 = new RÃ©pertoire();
 	f4 = new Fichier(6);
 	r3.add(f4);
 	
-	r4= new Répertoire();
+	r4= new RÃ©pertoire();
 	f5 = new Fichier(10);
 	r4.add(f5);
 	
@@ -59,10 +58,10 @@ public static void main(String[] args) {
 	Composite cp = new Composite();
 	cp.createPattern();
 	
-	System.out.println("Taille du premier répertoire: " + cp.r1.taille());
-	System.out.println("Taille du 2éme répertoire: " + cp.r2.taille());
-	System.out.println("Taille du 3éme repértoire " + cp.r3.taille());
-	System.out.println("Taille du 4éme répertoire: " + cp.r4.taille());
+	System.out.println("Taille du premier rÃ©pertoire: " + cp.r1.taille());
+	System.out.println("Taille du 2Ã©me rÃ©pertoire: " + cp.r2.taille());
+	System.out.println("Taille du 3Ã©me repÃ©rtoire " + cp.r3.taille());
+	System.out.println("Taille du 4Ã©me rÃ©pertoire: " + cp.r4.taille());
 
 }
 }
